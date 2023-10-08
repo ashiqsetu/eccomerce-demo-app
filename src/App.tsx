@@ -2,10 +2,6 @@ import { Fragment, useEffect, useState } from 'react'
 import {Button, Modal} from 'react-bootstrap';
 import './App.css'
 import { FiShoppingCart, FiX } from "react-icons/fi";
-import Footer from './components/common/AppFooter';
-import Cart from './components/common/Cart';
-import CONDITIONAL_RENDERING from './components/CONDITIONAL_RENDERING/index';
-import EVENT_HANDLER from './components/EVENT_HANDLER/index';
 
 export interface Product {
   id: number;
