@@ -1,0 +1,215 @@
+.product-filtering {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  z-index: 10;
+}
+.product-filtering button {
+  padding: 5px 15px;
+}
+.product-filtering button.active {
+  background: #d6b161;
+  color: #fff;
+}
+
+.product-list {
+  display: grid;
+  place-content: center;
+  padding-bottom: 30px;
+  margin-top: 50px;
+}
+.product-list .single-product {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+.product-list .single-product input {
+  text-align: center;
+}
+.product-list .single-product h3 {
+  font-size: 20px;
+}
+.product-list .single-product h3, .product-list .single-product p {
+  margin-bottom: 2px;
+  line-height: 1;
+}
+.product-list .single-product .size-list {
+  margin-bottom: 10px;
+}
+.product-list .single-product .size-list .option-radio-flex {
+  height: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 50px);
+}
+.product-list .single-product .size-list .option-radio-flex .radio {
+  margin-top: 0px;
+  min-height: 40px;
+  height: auto;
+  width: 100%;
+  margin: 0;
+}
+.product-list .single-product .size-list .option-radio-flex .radio input[type=radio] {
+  display: none;
+}
+.product-list .single-product .size-list .option-radio-flex .radio label, .product-list .single-product .size-list .option-radio-flex .radio input {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: flex;
+  padding: 0 5px;
+  width: 50px;
+  min-height: 40px;
+  height: auto;
+  border: 1px solid #CCC;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+}
+.product-list .single-product .size-list .option-radio-flex .radio label:hover {
+  color: #FFF;
+  background: #d6b161;
+  border-color: transparent;
+}
+.product-list .single-product .size-list .option-radio-flex .radio input[type=radio]:checked + label {
+  color: #FFF;
+  background: #d6b161;
+  border: medium none;
+  box-shadow: none;
+}
+.product-list .single-product .cart-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-list-show-btn {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d6b161;
+  color: #fff;
+  border: medium none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.cart-list-show-btn :hover {
+  background: #d6b161;
+  color: #fff;
+}
+.cart-list-show-btn.productAdded {
+  transition: transform 0.3s ease 0s;
+  animation: upsDowns 1s linear alternate;
+}
+@keyframes upsDowns {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.cart-list-show-btn span {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  color: #d6b161;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.cart-list-show-btn span:hover {
+  background: #fff;
+  color: #d6b161;
+}
+
+.modal {
+  padding: 0 !important;
+}
+
+.modal .modal-dialog {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.modal-content {
+  height: 100vh;
+  position: fixed;
+  width: 400px;
+  right: 0;
+  margin: 0;
+  background: #fff;
+  border-radius: 0;
+}
+.modal-content .modal-body {
+  overflow-y: auto;
+}
+
+.modal.fade .modal-dialog {
+  transform: translate(100%, 0);
+  background: #fff;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.cart-item {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.cart-item:nth-child(n+2) {
+  margin-top: 20px;
+}
+.cart-item img {
+  width: 80px;
+  height: 100px;
+}
+.cart-item .removeCartItemBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}/*# sourceMappingURL=styles.css.map */
