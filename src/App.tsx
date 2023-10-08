@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {Button, Modal} from 'react-bootstrap';
 import './App.css'
 import { FiShoppingCart, FiX } from "react-icons/fi";
@@ -170,6 +170,11 @@ function App() {
   }
 
 
+  useEffect(() => {
+    document.title = "Cart";
+  }, []);
+
+
   return (
     <>
       
@@ -266,13 +271,13 @@ function App() {
         </Modal.Footer>
       </Modal>
 
-      <CONDITIONAL_RENDERING/>
+      {/* <CONDITIONAL_RENDERING/> */}
 
-      <EVENT_HANDLER/>
+      {/* <EVENT_HANDLER/> */}
 
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
 
-      <Cart/>
+      {/* <Cart/> */}
 
       
     </>
